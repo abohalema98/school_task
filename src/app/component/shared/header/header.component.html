@@ -1,0 +1,29 @@
+<nav class="navbar is-info" role="navigation" aria-label="main navigation">
+  <div class="navbar-brand">
+    <a class="navbar-item p-2 wow slideInDown" data-wow-duration="1s" data-wow-delay="200ms" routerLink="/home"
+      routerLinkActive="active">
+      <img src="./../assets/Pictures/pngtree-vector-school-icon-png-image_782519.jpg" class="rounded-circle z-depth-0"
+        alt="logo" height="35" loading="lazy">
+    </a>
+  </div>
+
+
+  <div class="navbar-end">
+    <div class="navbar-item">
+      <div class="buttons">
+        <a class="button is-primary" (click)="logStat()">logStat</a>
+        <a class="button is-primary" routerLink="/signup" routerLinkActive="active" *ngIf="!userAuthStatus">
+          <strong>Sign up</strong>
+        </a>
+        <a class="button is-light" routerLink="/login" routerLinkActive="active" *ngIf="!userAuthStatus">
+          Log in
+        </a>
+        <a class="nav-link p-2 wow slideInDown float-right" data-wow-duration="1s" data-wow-delay="200ms"
+          (click)="onlogOut()"  *ngIf="userAuthStatus">
+          <img src="./../assets/Pictures/images.jpg" class="img-circle rounded-circle" title="LogOut" alt="logo"
+            loading="lazy">
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,42 @@
+<br>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-sm-2"></div>
+    <div class="col-sm-8">
+        <div class="jumbotron alert alert-primary">
+            <h1 class="display-4 justify-content-center">Students List</h1>
+        </div>
+    </div>
+</div>
+<div class="row">
+  <div class="col-sm-2"></div>
+  <div class="col-sm-8">
+    <table class="table table-bordered table-active table-hover table-sm p-2">
+      <thead class="thead-inverse">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Controls</th>
+        </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of UserList">
+            <td scope="row">{{item._id}}</td>
+            <td scope="row">{{item.name}}</td>
+            <td scope="row">{{item.email}}</td>
+            <td scope="row">
+              <ul class="btn-group">
+                <li><input type="button" value="Details" class="btn btn-info btn-group-sm " (click)="onDeitals(item._id)" routerLink="/details"></li>
+                <!-- <li><input type="button" value="Edit" class="btn btn-warning btn-group-sm"></li>
+                <li><input type="button" value="Delete" class="btn btn-danger btn-group-sm"></li> -->
+
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</div>

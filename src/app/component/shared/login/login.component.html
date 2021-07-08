@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="form col-sm-9 col-md-6 mt-5 mb-3 wrapper fadeInDown">
+      <!-- <h3 class="text-center">Player Login</h3> -->
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin(form)" #form="ngForm" class=" alert second ">
+          <img src="../../../../assets/Pictures/pngtree-vector-school-icon-png-image_782519.jpg">
+
+          <legend class="well-legend">
+              Login</legend>
+
+          <div class="md-form">
+              <input type="email" class="form-control" formControlName="email" placeholder="Email" required>
+          </div>
+          <div class="md-form">
+              <input type="password" class="form-control" formControlName="password" digits placeholder="Password" required>
+          </div>
+          <div class="row">
+              <div class="col-12">
+                  <input type="submit" value="login" class="btn btn-info btn-rounded my-3 btn-block "
+                      style="width: 200px;border-radius: 30px;">
+              </div>
+
+          </div>
+          <a [routerLink]="['/resetpassword']" routerLinkActive="router-link-active">Forget Password?</a>
+      </form>
+      <!-- Form -->
+  </div>
+</div>
+
