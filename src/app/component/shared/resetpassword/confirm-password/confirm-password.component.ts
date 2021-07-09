@@ -52,8 +52,6 @@ export class ConfirmPasswordComponent implements OnInit {
 
       })
   }
-  ResendVcode() {
-// this.ResetpasswordService
-  }
+
 
 }

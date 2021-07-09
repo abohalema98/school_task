@@ -3,7 +3,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const app = express();
 const userRouter = require('./Router/UserRouter')
-const adminRouter = require('./Router/AdminRouter')
+const studentsRouter = require('./Router/students')
 const resetpasswordRouter = require('./Controllers/resetPassword')
 const authUserController = require('./Controllers/userControllers')
 const DB_CONNECTION = require('./Config/dbConfig')
@@ -39,7 +39,7 @@ app.get('/', (request, response, next) => {
 app.use('/api/auth/user', authUserController);
 app.use('/api', resetpasswordRouter);
 app.use('/auth', userRouter)
-app.use('/auth', adminRouter)
+app.use('/auth', studentsRouter)
 
 
 const Port = process.env.Port

@@ -51,7 +51,7 @@ router.post('/signup',async (request, response) => {
 
   const emailExists = await User.findOne({ email: request.body.email })
   if (emailExists) {
-    return response.status(400).send(`email already exists ${emailExists.email}`)
+    return response.status(400).send(`email already exists`)
   }
   const hashedPassword = await bcrypt.hashSync(request.body.password, 8)
 
@@ -59,7 +59,6 @@ router.post('/signup',async (request, response) => {
     name: request.body.name,
     email: request.body.email,
     password: hashedPassword,
-    role: request.body.role,
   })
 
   userObject.save()

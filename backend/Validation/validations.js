@@ -5,8 +5,7 @@ const usersValidation = data => {
     const schema = joi.object({
         name: joi.string().required().min(4),
         email: joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }),
-        password: joi.string().required(),
-        role: joi.string().optional()
+        password: joi.string().required()
     });
     return schema.validate(data)
 

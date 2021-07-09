@@ -44,11 +44,6 @@ resetPasswordRouter.route('/resetpassword')
                     <b> ${verificationCodeRandom}</b>
                     `, // html body
         })
-          // .then(()=>{response.status(200).send(`Verification Code send successfly`)})
-        // .catch(()=>{response.send(`
-        // Sending Verification Code filed..!
-        // Check your internet Connection
-        // `)})
         response.status(201).json({
           message:"Verification Code send successfly"
         })
