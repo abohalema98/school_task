@@ -9,6 +9,7 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 })
 export class DetailsComponent implements OnInit {
   studentID: any;
+  ScheduleDestination= "Spawn_Locker_Hangout_Seat_LunchSpot_Seat_Clean_Club_Locker_Exit";
 
   constructor(private Router: Router,
     private UserAuthService: UserAuthService) { }

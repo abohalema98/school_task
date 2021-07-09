@@ -24,9 +24,7 @@ export class HeaderComponent implements OnInit {
       this.userAuthStatus = isUserAuth;
     })
   }
-  logStat(){
-    console.log(this.userAuthStatus)
-  }
+
   onlogOut() {
     this.UserService.logOut();
   };

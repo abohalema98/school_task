@@ -30,7 +30,9 @@ export class ResetpasswordComponent implements OnInit {
     const email = this.resetForm.controls.email.value
     this.ResetpasswordService.isemailfounded(email).subscribe(result=>{
       if(result){
-        console.log(result)
+        this.ResetpasswordService.isMatched = true;
+        this.router.navigate(['/confirmpassword'])
+        this.toastr.success("Verification Code send successfly")
       }else{
         this.ResetpasswordService.isMatched = false;
 

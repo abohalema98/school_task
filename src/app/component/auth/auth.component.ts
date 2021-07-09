@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Students } from 'src/app/models/students';
 import { User } from 'src/app/models/user';
 import { UserAuthService } from 'src/app/services/user-auth.service';
 @Component({
@@ -10,7 +11,7 @@ import { UserAuthService } from 'src/app/services/user-auth.service';
 export class AuthComponent implements OnInit {
 
 
-  UserList: User[] = [];
+  studentsList: Students[] = [];
   token: string;
   userName: string;
   email: string;
@@ -21,8 +22,8 @@ export class AuthComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.UserService.Userlist().subscribe(data => {
-      this.UserList = [...data]
+    this.UserService.studentslist().subscribe(data => {
+      this.studentsList = [...data]
       // console.log(this.UserList)
     })
     this.userName = this.UserService.getUserPayload().name

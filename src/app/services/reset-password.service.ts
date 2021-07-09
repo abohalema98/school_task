@@ -21,10 +21,6 @@ export class ResetPasswordService {
     return this.Http.post(this.baseURL, { email })
   }
 
-  // Resend_Vcode(){
-  //   return this.Http.
-  // }
-
   /**
    *
    * @param newpassword

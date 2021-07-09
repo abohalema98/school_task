@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { User } from '../models/user';
 import { Subject } from 'rxjs';
 import { environment } from '../../environments/environment'
+import { Students } from '../models/students';
 
 
 @Injectable({
@@ -42,8 +43,8 @@ export class UserAuthService {
     return this.http.post<User>(this.baseURL + "/signup", newUser)
   }
 
-  Userlist() {
-    return this.http.get<User[]>(environment.GET_URL)
+  studentslist() {
+    return this.http.get<Students[]>("http://localhost:3000/auth/students")
   }
 
   logOut() {
