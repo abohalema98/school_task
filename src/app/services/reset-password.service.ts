@@ -7,7 +7,9 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ResetPasswordService {
-   private baseURL: string = environment.PASSWORD_URL;
+  PASSWORD_URL = "http://localhost:3000/api/resetpassword"
+
+   private baseURL: string = this.PASSWORD_URL;
   isMatched: boolean = false;
 
   /**
