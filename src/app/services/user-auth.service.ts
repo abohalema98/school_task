@@ -11,8 +11,10 @@ import { Students } from '../models/students';
   providedIn: 'root'
 })
 export class UserAuthService {
+  BACKEND_URL = "http://localhost:3000/api/auth/user"
+  GET_URL = "http://localhost:3000/auth/users"
 
-  private baseURL: string = environment.BACKEND_URL
+  private baseURL: string = this.BACKEND_URL
   loginStatus = new Subject<boolean>();
   private timeOut: any = localStorage.getItem('expireTime')
   userId: number;
@@ -28,11 +30,11 @@ export class UserAuthService {
     return this.http.post(this.baseURL + "/userLogin", JSON.stringify(user), { headers: headers })
   }
   onAddDetailes() {
-    return this.http.post("http://localhost:3000/auth/users", this.userId).subscribe(res=>{
+    return this.http.post(this.GET_URL, this.userId).subscribe(res => {
       console.log(res)
     })
   }
-  userID(){
+  userID() {
     return this.userId
   }
   authStatusListener() {
