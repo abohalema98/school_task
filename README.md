@@ -1,6 +1,6 @@
 # Schoolsystem
 
-__Simple school management system___.
+Simple school management system
 
  ** MEAN Stack Project **
 
